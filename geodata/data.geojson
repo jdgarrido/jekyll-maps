@@ -1,13 +1,29 @@
 ---
 ---
 {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [ -76.366, -3.356 ]
-  },
-  "properties": {
-    "name": "Dinagat Islands",
-    "marker-color": "#9c89cc"
-  }
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ -76.366, -3.356 ]
+			},
+			"properties": {
+				"name": "Dinagat Islands",
+				"marker-color": "#9c89cc"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ -74.366, -3.556 ]
+			},
+			"properties": {
+				"name": "Dinagat Islands",
+				"marker-color": "#9c89cc"
+			}
+		}
+	]
 }
