@@ -13,6 +13,10 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 
+collections:
+  reportes:
+    output: true
+
 # mapbox
 mapbox-token: pk.eyJ1IjoiamdhcnJpZG8iLCJhIjoiOVhrQ2ZwMCJ9.eItLrt9DzG1YNCbNZ0hhDg
 mapbox-id: jgarrido.l8adofaj
