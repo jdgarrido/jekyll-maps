@@ -19,6 +19,8 @@ collections:
 
 twitter: @twitter_username
 
+angularjs: 1.3.8
+
 # mapbox
 mapbox-token: pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 mapbox-id: xxxxxxxx.xxxxxxxx
