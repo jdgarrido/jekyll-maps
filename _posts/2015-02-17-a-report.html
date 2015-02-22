@@ -49,9 +49,17 @@ points: -3.356,-76.366
 
 	<script>
 	L.mapbox.accessToken = '{{site.mapbox-token}}';
-	var map = L.mapbox.map('map', '{{site.mapbox-id}}')
+	var map = L.mapbox.map('map', '{{site.mapbox-id}}', { zoomControl: false })
 				.setView([-3.356, -76.366], 7);
+		
+		// Disable drag and zoom handlers.
+		map.dragging.disable();
+		map.touchZoom.disable();
+		map.doubleClickZoom.disable();
 		map.scrollWheelZoom.disable();
+
+	// Disable tap handler, if present.
+	if (map.tap) map.tap.disable();
 
 	var featureLayer = L.mapbox.featureLayer()
 						.loadURL('/geodata/data.geojson')
