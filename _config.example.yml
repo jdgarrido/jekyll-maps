@@ -18,5 +18,13 @@ collections:
     output: true
 
 # mapbox
-mapbox-token: pk.eyJ1IjoiamdhcnJpZG8iLCJhIjoiOVhrQ2ZwMCJ9.eItLrt9DzG1YNCbNZ0hhDg
-mapbox-id: jgarrido.l8adofaj
+mapbox-token: pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+mapbox-id: xxxxxxxx.xxxxxxxx
+
+#flickr
+flickr:
+	cache_dir: 		"./_cache/flickr"
+	api_key: 		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	shared_secret: 	xxxxxxxxxxxxxxxx
+	access_token: 	xxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx
+	access_secret: 	xxxxxxxxxxxxxxxx
