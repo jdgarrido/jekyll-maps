@@ -17,6 +17,8 @@ collections:
   reportes:
     output: true
 
+twitter: @twitter_username
+
 # mapbox
 mapbox-token: pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 mapbox-id: xxxxxxxx.xxxxxxxx
