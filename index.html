@@ -1,25 +1,50 @@
 ---
 layout: default
 ---
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+<link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+<link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
 
-<div class="container">
+<div id="map"></div>
 
-  <div class="page-header">
-    <h2>Reports</h2>
+  <div class="container">
+
+    <div class="page-header">
+      <h2>Reports</h2>
+    </div>
+
+    <ul class="post-list">
+      {% for post in site.reportes %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <h3>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
   </div>
 
-  <ul class="post-list">
-    {% for post in site.reportes %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <script>
+  L.mapbox.accessToken = '{{site.mapbox-token}}';
+  var map = L.mapbox.map('map', '{{site.mapbox-id}}')
+        .setView([-3.356, -76.366], 7);
 
-        <h3>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+  var featureLayer = L.mapbox.featureLayer()
+            .loadURL('/geodata/reports.geojson')
+            .addTo(map);
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  L.mapbox.featureLayer('examples.map-h61e8o8e').on('ready', function(e) {
+    // The clusterGroup gets each marker in the group added to it
+    // once loaded, and then is added to the map
+    var clusterGroup = new L.MarkerClusterGroup();
+    e.target.eachLayer(function(layer) {
+        clusterGroup.addLayer(layer);
+    });
+    map.addLayer(clusterGroup);
+});
+  </script>
