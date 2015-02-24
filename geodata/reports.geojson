@@ -11,8 +11,9 @@
 				"coordinates": [ {{ post.points }} ]
 			},
 			"properties": {
-				"name": "{{ post.title }}",
-				"marker-color": "#9c89cc"
+				"title": "{{ post.title }}",
+				"marker-size": "medium",
+				"marker-symbol": "cross"
 			}
 		}{% if forloop.rindex > 1 %},{% endif%}
 	{% endfor %}
